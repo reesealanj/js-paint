@@ -24,10 +24,17 @@ body {
 }
 
 #board {
-  background: #f0f0f0;
+  background: #fff;
   border-radius: 5px;
-  height: 70vh;
-  width: 70vw;
+}
+
+.board-container {
+    height: 75%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #source {
@@ -38,8 +45,44 @@ body {
     background: lightsteelblue;
     display: grid;
     grid-auto-rows: auto;
-    width: 70vw;
-    height: 10vh;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(8, 1fr);
+    width: 800px;
+    height: auto;
     margin-top: 5px;
     border-radius: 10px;
+    grid-template-areas: 
+    "blue black green red current current eraser clear"
+    "yellow orange pink brown line line download download";
+}
+
+.round-button {
+    padding:1em;
+    cursor: pointer;
+    margin: 5px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    border-radius: 50%;
+    text-align:center;
+    text-decoration:none;
+    box-shadow: 0 0 3px gray;
+}
+
+.square-button{
+    border-radius: 4px;
+    margin: 2px;
+    padding: 3px;
+    font-size: auto;
+    text-align: center;
+    justify-content:center;
+    align-content: center;
+    cursor: pointer;
+    height: 50%;
+}
+
+.buttons {
+    padding:1em;
+
+    grid-template-areas: colors;
 }

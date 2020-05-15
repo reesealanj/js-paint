@@ -8,17 +8,29 @@
 </head>
 <body>
     <h1>JS Paint - Simple MS Paint Clone in JS</h1>
-    <div id="socials">
-        <h4><a href="https://www.github.com/reesealanj/js-paint" id="link">Click to view the Source Code on Github</a></h4>
+    <div class="board-container">
+        <canvas id="board" class="drop-shadow"></canvas>
     </div>
-    <canvas id="board" class="drop-shadow"></canvas>
     <div id="controls" class="drop-shadow">
-
+            <a class='round-button' onclick=lineColor(2) style="background:blue; grid-area: blue;"></a>
+            <a class='round-button' onclick=lineColor(1) style="background:black; grid-area: black;"></a>
+            <a class='round-button' onclick=lineColor(3) style="background:green; grid-area: green;"></a>
+            <a class='round-button' onclick=lineColor(4) style="background:red; grid-area: red;"></a>
+            <a class='round-button' onclick=lineColor(5) style="background:yellow; grid-area: yellow;"></a>
+            <a class='round-button' onclick=lineColor(6) style="background:orange; grid-area: orange;"></a>
+            <a class='round-button' onclick=lineColor(7) style="background:pink; grid-area: pink;"></a>
+            <a class='round-button' onclick=lineColor(8) style="background:brown; grid-area: brown;"></a>
+            <a class='square-button' onclick=lineColor(9) style="background:grey; grid-area: eraser;">Erase</a>
+            <a class='square-button' onclick=clearCanvas() style="background:grey; grid-area: clear;">Clear</a>
+            <form action="#" style="background: line; color: black;">
+                <label for="lineStroke">Line Width</label>
+                <input type="number" id="lineStroke" style="width:60px;"/>
+                <input type="button" onclick="strokeForm();" value="Change"/>
+            </form>
     </div>
-    
     <script src="main.js"></script>
     <script>
-        setCanvasSize();
+        init("board");
     </script>
 </body>
 </html>
