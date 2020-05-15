@@ -16,7 +16,8 @@ function init(id) {
     ctx = canvas.getContext("2d");
     canvas.width = 800;
     canvas.height = 600;
-
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
     // Create Event Listener for Events we care to process
     // Moving mouse on canvas
     canvas.addEventListener("mousemove", function (e) {
@@ -167,5 +168,14 @@ function strokeWidth(s) {
 
 // Save the canvas as a PNG
 function downloadCanvas() {
-
+    if (window.navigator.msSaveBlob) {
+        window.navigator.msSaveBlob(canvas.msToBlob(), "canvas-image.png");
+    } else {
+        const a = document.createElement("a");
+        document.body.appendChild(a);
+        a.href = canvas.toDataURL();
+        a.download = "canvas-image.png";
+        a.click();
+        document.body.removeChild(a);
+    }
 }
