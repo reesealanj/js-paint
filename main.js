@@ -41,6 +41,7 @@ function init(id) {
             locatePointer('click', e);
         }
     }, false);
+    changeTool();
 }
 
 
@@ -63,7 +64,7 @@ function locatePointer(a, e) {
         cY = e.clientY - canvas.getBoundingClientRect().top;
         // Indicate user has started drawing
         drawing = true;
-        console.log("Click Start: " + cX + "," + cY);
+        //console.log("Click Start: " + cX + "," + cY);
         dot = true;
         if (dot) {
             ctx.beginPath();
@@ -84,7 +85,7 @@ function locatePointer(a, e) {
             // Copy pointer location into cX and cY
             cX = e.clientX - canvas.getBoundingClientRect().left;
             cY = e.clientY - canvas.getBoundingClientRect().top;
-            console.log("Moved to: " + cX + "," + cY);
+            //console.log("Moved to: " + cX + "," + cY);
             // Draw at new Location
             draw();
         }
@@ -153,6 +154,7 @@ function lineColor(c) {
             return;
     }
     console.log("lineColor() called, color: " + color);
+    changeTool();
     return;
 }
 
@@ -178,4 +180,9 @@ function downloadCanvas() {
         a.click();
         document.body.removeChild(a);
     }
+}
+
+function changeTool() {
+    var toolHeader = document.getElementById("tool");
+    toolHeader.innerText = "Current Tool: " + cur_tool;
 }

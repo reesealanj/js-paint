@@ -69,6 +69,11 @@ body {
     box-shadow: 0 0 3px gray;
 }
 
+.round-button:active {
+    box-shadow: 0 5px rgb(133, 132, 132);
+    transform: translateX(2px);
+}
+
 .square-button{
     border-radius: 4px;
     margin: 2px;
@@ -81,8 +86,7 @@ body {
     height: 50%;
 }
 
-.buttons {
-    padding:1em;
-
-    grid-template-areas: colors;
+.square-button:active {
+    box-shadow: 0 5px #fff;
+    transform: translateX(2px);
 }

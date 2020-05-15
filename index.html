@@ -23,10 +23,11 @@
             <a class='square-button' onclick=lineColor(9) style="background:grey; grid-area: eraser;">Erase</a>
             <a class='square-button' onclick=clearCanvas() style="background:grey; grid-area: clear;">Clear</a>
             <a class='square-button' onclick=downloadCanvas() style="background:grey; grid-area: download;">Download as PNG</a>
-            <form action="#" style="background: line; color: black;">
+            <h4 style='grid-area: current; color: black;' id="tool">Current Tool:</h4>
+            <form style="display: flex; color: black;">
                 <label for="lineStroke">Line Width</label>
-                <input type="number" id="lineStroke" style="width:60px;"/>
-                <input type="button" onclick="strokeForm();" value="Change"/>
+                <input type="number" id="lineStroke" style="width:60px; height: 20px;"/>
+                <input type="button" onclick="strokeForm();" value="Change" class="square-button" style="background: grey; color: white;"/>
             </form>
     </div>
     <script src="main.js"></script>
